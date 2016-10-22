@@ -19,7 +19,7 @@ public class SentenceSplitter {
 		for (String word : splittedSentence) {
 			if (word.length() > rowLength) {
 				String sw = splitWord(word, rowLength);
-				String we = word.substring(sw.length() - 1, word.length());
+				String we = word.substring(sw.length(), word.length());
 				result.append("\n" + sw + "\n" + we + " ");
 				currentRowLength = we.length();
 			} else if (currentRowLength + word.length() >= rowLength) {
@@ -46,7 +46,7 @@ public class SentenceSplitter {
 		String inputSentence = "Java is a high-level programming language originally developed by Sun Microsystems and released in 1995.";
 		System.out.println(inputSentence + "\n");
 		SentenceSplitter sSplitter = new SentenceSplitter(inputSentence);
-		sSplitter.splitSentence(6);
+		sSplitter.splitSentence(15);
 		System.out.println(sSplitter.getSentence());
 	}
 }
